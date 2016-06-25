@@ -17,7 +17,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+#'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': dj_database_url.config(default='sqlite://///home/ilovejsp/git/bootcamp2/ilovejsp.db')
 }
 
 ALLOWED_HOSTS = ['*']
