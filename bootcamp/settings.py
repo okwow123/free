@@ -10,8 +10,8 @@ PROJECT_DIR = Path(__file__).parent
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SECRET_KEY = config('SECRET_KEY')
-
+#SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 's3cr3t_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 TEMPLATE_DEBUG = DEBUG
