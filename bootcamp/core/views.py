@@ -26,6 +26,7 @@ def network(request):
     users_list = User.objects.filter(is_active=True).order_by('username')
     paginator = Paginator(users_list, 100)
     page = request.GET.get('page')
+    print page
     try:
         users = paginator.page(page)
     except PageNotAnInteger:
@@ -37,6 +38,9 @@ def network(request):
 
 @login_required
 def profile(request, username):
+    print '*******************************************'
+    print username
+    print request
     page_user = get_object_or_404(User, username=username)
     all_feeds = Feed.get_feeds().filter(user=page_user)
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)

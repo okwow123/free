@@ -10,6 +10,7 @@ from django.template.loader import render_to_string
 
 
 def _articles(request, articles):
+    print 'test'
     paginator = Paginator(articles, 10)
     page = request.GET.get('page')
     try:
