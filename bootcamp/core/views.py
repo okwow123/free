@@ -41,7 +41,6 @@ def profile(request, username):
     print '*******************************************'
     print username
     print request
-    username="ilovejsp"
     page_user = get_object_or_404(User, username=username)
     all_feeds = Feed.get_feeds().filter(user=page_user)
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)
