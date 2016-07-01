@@ -1,4 +1,5 @@
 import os
+import sys
 from PIL import Image
 
 from django.contrib.auth.models import User
@@ -38,9 +39,7 @@ def network(request):
 
 @login_required
 def profile(request, username):
-    print '*******************************************'
-    print username
-    print request
+    sys.stdout.write('test')
     page_user = get_object_or_404(User, username=username)
     all_feeds = Feed.get_feeds().filter(user=page_user)
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)
