@@ -1,4 +1,5 @@
 import os
+import sys
 from PIL import Image
 
 from django.contrib.auth.models import User
@@ -15,6 +16,8 @@ from bootcamp.feeds.views import feeds
 
 
 def home(request):
+    print "**************home**************"
+    print sys.stdout.write("***********sys.stdout**********")
     if request.user.is_authenticated():
         return feeds(request)
     else:
@@ -37,7 +40,7 @@ def network(request):
 
 @login_required
 def profile(request, username):
-#sys.stdout.write("test\n")
+    sys.stdout.write("test\n")
     page_user = get_object_or_404(User, username=username)
     all_feeds = Feed.get_feeds().filter(user=page_user)
     paginator = Paginator(all_feeds, FEEDS_NUM_PAGES)
