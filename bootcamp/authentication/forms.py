@@ -76,6 +76,7 @@ class SignUpForm(forms.ModelForm):
         fields = ['username', 'email', 'password', 'confirm_password', ]
 
     def __init__(self, *args, **kwargs):
+        print "**********init*************"
         super(SignUpForm, self).__init__(*args, **kwargs)
         self.fields['username'].validators.append(ForbiddenUsernamesValidator)
         self.fields['username'].validators.append(InvalidUsernameValidator)
