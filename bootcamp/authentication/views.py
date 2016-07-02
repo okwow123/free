@@ -10,10 +10,9 @@ def signup(request):
         print "******************sighup pos*********"
         print request
         print request.POST
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST)# error occurred
         print form
         print "************form*********"
-        print "**********form*********"
         if not form.is_valid():
             print "************error****************"
             print request
