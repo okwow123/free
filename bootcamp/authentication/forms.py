@@ -69,6 +69,7 @@ class SignUpForm(forms.ModelForm):
         widget=forms.EmailInput(attrs={'class': 'form-control'}),
         required=True,
         max_length=75)
+    print "@@@@@@@@@@signup end@@@@@@@@"
 
     class Meta:
         print "***************meta call*********"
