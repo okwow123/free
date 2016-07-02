@@ -11,6 +11,7 @@ def signup(request):
         print request
         print request.POST
         form = SignUpForm(request.POST)
+        print form
         if not form.is_valid():
             print "************error****************"
             print request
