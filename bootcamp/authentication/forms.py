@@ -93,6 +93,13 @@ class SignUpForm(forms.ModelForm):
         print "***********self*************"
         print self
         print "************self***********"
+        print "self : "
+        print self
+        print "*args : "
+        print args
+        print "**kwargs : "
+        print kwargs
+
     def clean(self):
         print "*********clean call start **************"
         super(SignUpForm, self).clean()
