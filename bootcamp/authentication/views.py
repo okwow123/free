@@ -7,15 +7,20 @@ from bootcamp.feeds.models import Feed
 
 def signup(request):
     if request.method == 'POST':
+        print "******************sighup pos*********"
         form = SignUpForm(request.POST)
         if not form.is_valid():
             return render(request, 'authentication/signup.html',
                           {'form': form})
 
         else:
+            print "**************username"
             username = form.cleaned_data.get('username')
+            print username
             email = form.cleaned_data.get('email')
+            print email
             password = form.cleaned_data.get('password')
+            print password
             User.objects.create_user(username=username, password=password,
                                      email=email)
             user = authenticate(username=username, password=password)
