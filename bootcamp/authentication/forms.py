@@ -52,6 +52,8 @@ def UniqueUsernameIgnoreCaseValidator(value):
 
 
 class SignUpForm(forms.ModelForm):
+    print "sighup form!!!!!!!!!!!"
+    print forms.ModelForm
     username = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=30,
