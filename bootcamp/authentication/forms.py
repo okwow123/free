@@ -81,12 +81,13 @@ class SignUpForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         print "**********init*************"
         print "self : "
-        print self
+#print self
         print "args : "
-        print args
+#print args
         print "kwargs : "
-        print kwargs
+#print kwargs
         super(SignUpForm, self).__init__(*args, **kwargs)
+        print args
         print "after init***************************"
         print self.fields['username']
         self.fields['username'].validators.append(ForbiddenUsernamesValidator)
