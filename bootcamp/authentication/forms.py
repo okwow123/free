@@ -71,9 +71,11 @@ class SignUpForm(forms.ModelForm):
         max_length=75)
 
     class Meta:
+        print "***************meta call*********"
         model = User
         exclude = ['last_login', 'date_joined']
         fields = ['username', 'email', 'password', 'confirm_password', ]
+        print "****************meta call end **************"
 
     def __init__(self, *args, **kwargs):
         print "**********init*************"
@@ -87,6 +89,7 @@ class SignUpForm(forms.ModelForm):
         self.fields['email'].validators.append(SignupDomainValidator)
         print "**************init end**************"
     def clean(self):
+        print "*********clean call start **************"
         super(SignUpForm, self).clean()
         password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data.get('confirm_password')
@@ -94,3 +97,4 @@ class SignUpForm(forms.ModelForm):
             self._errors['password'] = self.error_class(
                 ['Passwords don\'t match'])
         return self.cleaned_data
+        print "***************clean call end ********************"
