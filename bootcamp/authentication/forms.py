@@ -92,6 +92,7 @@ class SignUpForm(forms.ModelForm):
         print "**************init end**************"
         print "***********self*************"
         print self
+        print "************self***********"
     def clean(self):
         print "*********clean call start **************"
         super(SignUpForm, self).clean()
