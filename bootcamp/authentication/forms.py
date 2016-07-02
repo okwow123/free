@@ -90,6 +90,8 @@ class SignUpForm(forms.ModelForm):
         self.fields['email'].validators.append(UniqueEmailValidator)
         self.fields['email'].validators.append(SignupDomainValidator)
         print "**************init end**************"
+        print "***********self*************"
+        print self
     def clean(self):
         print "*********clean call start **************"
         super(SignUpForm, self).clean()

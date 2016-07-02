@@ -12,7 +12,7 @@ def signup(request):
         print request.POST
         form = SignUpForm(request.POST)# error occurred
         print form
-        print "************form*********"
+        print "************form********* error eccurred !!!!!!!!!!!!"
         if not form.is_valid():
             print "************error****************"
             print request
