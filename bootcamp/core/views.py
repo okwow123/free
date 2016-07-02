@@ -1,5 +1,4 @@
 import os
-import sys
 from PIL import Image
 
 from django.contrib.auth.models import User
@@ -27,7 +26,6 @@ def network(request):
     users_list = User.objects.filter(is_active=True).order_by('username')
     paginator = Paginator(users_list, 100)
     page = request.GET.get('page')
-    print page
     try:
         users = paginator.page(page)
     except PageNotAnInteger:
