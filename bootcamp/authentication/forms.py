@@ -85,7 +85,7 @@ class SignUpForm(forms.ModelForm):
             UniqueUsernameIgnoreCaseValidator)
         self.fields['email'].validators.append(UniqueEmailValidator)
         self.fields['email'].validators.append(SignupDomainValidator)
-
+        print "**************init end**************"
     def clean(self):
         super(SignUpForm, self).clean()
         password = self.cleaned_data.get('password')
