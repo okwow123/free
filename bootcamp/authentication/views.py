@@ -10,6 +10,8 @@ def signup(request):
         print "******************sighup pos*********"
         form = SignUpForm(request.POST)
         if not form.is_valid():
+            print "************error****************"
+            print request
             return render(request, 'authentication/signup.html',
                           {'form': form})
 
