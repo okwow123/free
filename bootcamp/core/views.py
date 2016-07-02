@@ -18,6 +18,8 @@ from bootcamp.feeds.views import feeds
 def home(request):
     print "**************home**************"
     print sys.stdout.write("***********sys.stdout**********")
+    print request
+    print "***************request**********"
     if request.user.is_authenticated():
         return feeds(request)
     else:
