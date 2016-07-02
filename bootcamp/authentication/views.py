@@ -10,6 +10,8 @@ def signup(request):
         print "******************sighup pos*********"
         print request
         print request.POST
+        print SignUpForm(request.POST)
+        print "@@@@@@@@@@@@@@@@signupform(request.POST)"
         form = SignUpForm(request.POST)# error occurred
         print form
         print "************form********* error eccurred !!!!!!!!!!!!"
