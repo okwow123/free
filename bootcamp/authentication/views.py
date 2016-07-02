@@ -9,6 +9,7 @@ def signup(request):
     if request.method == 'POST':
         print "******************sighup pos*********"
         print request
+        print request.POST
         form = SignUpForm(request.POST)
         if not form.is_valid():
             print "************error****************"
