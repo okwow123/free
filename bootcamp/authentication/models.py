@@ -9,9 +9,13 @@ from bootcamp.activities.models import Notification
 
 
 class Profile(models.Model):
+    print "$$$$$$$$$profile user : "
     user = models.OneToOneField(User)
+    print "$$$$$$$$$$$$$$prifle location : "
     location = models.CharField(max_length=50, null=True, blank=True)
+    print "$$$$$$$$$$$$$$$$profile url : "
     url = models.CharField(max_length=50, null=True, blank=True)
+    print "$$$$$$$$$$$job_title : "
     job_title = models.CharField(max_length=50, null=True, blank=True)
     # reputation = models.IntegerField(default=0)
     # language = models.CharField(max_length=5, default='en')
