@@ -8,6 +8,7 @@ from bootcamp.feeds.models import Feed
 def signup(request):
     if request.method == 'POST':
         print "******************sighup pos*********"
+        print request
         form = SignUpForm(request.POST)
         if not form.is_valid():
             print "************error****************"
